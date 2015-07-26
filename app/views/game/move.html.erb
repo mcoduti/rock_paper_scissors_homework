@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>RockPaperScissorsHomework</title>
-  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<h1> hello and P:  <%= @user_move %>.  C:  <%= @computer_move %> </h1>
 
+<h3 class="panel-title text-center">You played <%= @user_move %>.</h3>
 
-
-  <%= yield %>
-<!-- <div class="container">
+<div class="container">
 
   <hr>
 
@@ -38,10 +28,10 @@
       <div class="col-md-6">
         <div class="panel panel-success">
           <div class="panel-heading">
-            <h3 class="panel-title text-center">You played rock.</h3>
+            <h3 class="panel-title text-center">You played <%= @user_move %>.</h3>
           </div>
           <div class="panel-body">
-            <img src="/assets/images/rock.png" class="img-responsive">
+            <img src="/assets/images/<%= @user_move %>.png" class="img-responsive">
           </div>
         </div>
       </div>
@@ -49,10 +39,10 @@
       <div class="col-md-6">
         <div class="panel panel-danger">
           <div class="panel-heading">
-            <h3 class="panel-title text-center">The computer played scissors.</h3>
+            <h3 class="panel-title text-center">The computer played <%= @computer_move %>.</h3>
           </div>
           <div class="panel-body">
-            <img src="/assets/images/scissors.png" class="img-responsive">
+            <img src="/assets/images/<%= @computer_move %>.png" class="img-responsive">
           </div>
         </div>
       </div>
@@ -61,7 +51,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="well">
-          <h1 class="text-center">You won!</h1>
+          <h1 class="text-center"><%= @outcome %></h1>
         </div>
       </div>
     </div>
@@ -212,7 +202,3 @@
 </div>
 
 </div>
- -->
-
-</body>
-</html>
