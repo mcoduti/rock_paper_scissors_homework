@@ -1,4 +1,8 @@
-<h1> hello and P:  <%= @user_move %>.  C:  <%= @computer_move %> </h1>
+<!-- <h1> hello and P:  <%= @user_move %>.  C:  <%= @computer_move %> </h1>
+
+<h1> and . . . .  <%= @all_moves.sum(:user_wins) %>
+
+<h1> and total player wins:  <%= @total_rock_wins %>
 
 <h3 class="panel-title text-center">You played <%= @user_move %>.</h3>
 
@@ -73,30 +77,30 @@
 
         <tr>
           <td>rock</td>
-          <td>3</td>
-          <td>0</td>
-          <td>1</td>
+          <td><%= @total_rock_wins %></td>
+          <td><%= @total_rock_losses %></td>
+          <td><%= @total_rock_ties %></td>
         </tr>
 
         <tr>
           <td>paper</td>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
+          <td><%= @total_paper_wins %></td>
+          <td><%= @total_paper_losses %></td>
+          <td><%= @total_paper_ties %></td>
         </tr>
 
         <tr>
           <td>scissors</td>
-          <td>1</td>
-          <td>2</td>
-          <td>2</td>
+          <td><%= @total_scissors_wins %></td>
+          <td><%= @total_scissors_losses %></td>
+          <td><%= @total_scissors_ties %></td>
         </tr>
 
         <tr>
           <th>Total</th>
-          <th>4</th>
-          <th>3</th>
-          <th>4</th>
+          <th><%= @total_wins %></th>
+          <th><%= @total_losses %></th>
+          <th><%= @total_ties %></th>
         </tr>
       </table>
     </div>
@@ -105,8 +109,7 @@
     <div class="panel panel-info">
       <div class="panel-heading">
         <h5 class="panel-title">
-          Complete history
-          (11)
+          Complete history:  <%= @db_count %>
         </h5>
       </div>
 
@@ -119,86 +122,38 @@
           <th>Tie</th>
         </tr>
 
-          <tr>
-            <td>rock</td>
-            <td>scissors</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>rock</td>
-            <td>rock</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>rock</td>
-            <td>scissors</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>paper</td>
-            <td>paper</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>scissors</td>
-            <td>rock</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>scissors</td>
-            <td>scissors</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>scissors</td>
-            <td>scissors</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>scissors</td>
-            <td>paper</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>scissors</td>
-            <td>rock</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>paper</td>
-            <td>scissors</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>rock</td>
-            <td>scissors</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
+  <% @all_moves.each do |zebra| %>
+
+
+     <tr>
+      <td>
+        <%= zebra.user_move %>
+      </td>
+
+       <td>
+        <%= zebra.computer_move %>
+      </td>
+
+      <td>
+        <%= zebra.user_wins %>
+      </td>
+
+      <td>
+        <%= zebra.computer_wins %>
+      </td>
+
+      <td>
+        <%= zebra.tie %>
+      </td>
+
+    </tr>
+  <% end %>
+
+
       </table>
     </div>
   </div>
 </div>
 
 </div>
+ -->
